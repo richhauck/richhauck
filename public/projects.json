@@ -1,0 +1,181 @@
+{
+    "projects":[
+        {
+            "id": "eb5extell",
+            "imageUrl": "/images/thumb.webp",
+            "name": "EB5 Extell",
+            "client": "Concept Creative Studio",
+            "categories":["development"]
+        },
+        {
+          "id": "harrisburg-beer-week",
+          "imageUrl": "/images/thumb.webp",
+          "name": "Harrisburg Beer Week",
+            "client": "Harrisburg Beer Week",
+            "categories":["design", "development"],
+          "featured":"true"
+        },
+        {
+          "id": "trinity-golf-trips",
+          "imageUrl": "/images/thumb.webp",
+          "name": "Trinity Golf Trips",
+            "client": "Trinity Golf Trips",
+            "categories":["design", "development"],
+          "featured":"true"
+        },
+        {
+            "id": "gkvisual",
+            "imageUrl": "/images/thumb.webp",
+            "name": "GK Visual",
+            "client": "GK Visual",
+            "categories":["design", "development"],
+            "featured":"true"
+        },
+        {
+            "id": "pantrycafe",
+            "imageUrl": "/images/thumb.webp",
+            "name": "The Pantry Café",
+            "client": "The Hershey Pantry Group",
+            "categories":["photography", "design", "development"]
+        },
+        {
+            "id": "manada",
+            "imageUrl": "/images/thumb.webp",
+            "name": "Manada Conservancy",
+            "client": "Manada Conservancy",
+            "categories":["identity", "design", "development"],
+            "featured":"true"
+        },
+        {
+            "id": "zeroday-brewing",
+            "imageUrl": "/images/thumb.webp",
+            "name": "ZerØday Brewing",
+            "client": "ZerØday Brewing Company",
+            "categories":["design", "development"],
+            "featured":"true"
+        },
+        {
+            "id": "theburg",
+            "imageUrl": "/images/thumb.webp",
+            "name": "The Burg News",
+            "client": "The Burg News",
+            "categories":["illustration"]
+        },
+        {
+            "id": "hershey-pantry",
+            "imageUrl": "/images/thumb.webp",
+            "name": "The Hershey Pantry",
+            "client": "Hershey Pantry",
+            "categories":["design", "development", "photography"]
+        },
+        {
+            "id": "sinvin",
+            "imageUrl": "/images/thumb.webp",
+            "name": "Sinvin Real Estate",
+            "client": "Sinvin Real Estate",
+            "categories":["design", "development"]
+        },
+        {
+            "id": "roost-architecture",
+            "imageUrl": "/images/thumb.webp",
+            "name": "Roost Architecture",
+            "client": "Roost Architecture",
+            "categories":["identity", "design", "development", "photography"]
+        },
+        {
+            "id": "lassen-advisors",
+            "imageUrl": "/images/thumb.webp",
+            "name": "Lassen Advisors",
+            "client": "Lassen Advisors, LLC",
+            "categories":["identity", "design", "development"],
+            "featured":"true"
+        },
+        {
+            "id": "sara-bozich",
+            "imageUrl": "/images/thumb.webp",
+            "name": "Sara Bozich",
+            "client": "Sara Bozich",
+            "categories":["design", "development"],
+            "featured":"true"
+        },
+        {
+            "id": "torchbearer-sauces",
+            "imageUrl": "/images/thumb.webp",
+            "name": "TorchBearer Sauces",
+            "client": "TorchBearer Sauces, LLC",
+            "categories":["identity", "photography", "illustration"]
+        },
+        {
+            "id": "metalledwith",
+            "imageUrl": "/images/thumb.webp",
+            "name": "Metalledwith",
+            "client": "Metalledwith",
+            "categories":["design", "development", "photography"]
+        },
+        {
+            "id": "jbare",
+            "imageUrl": "/images/thumb.webp",
+            "name": "JBA Real Estate",
+            "client": "JBA Real Estate",
+            "categories":["design", "development"],
+            "featured":"true"
+        },
+        {
+          "id": "img-precision",
+          "imageUrl": "/images/thumb.webp",
+          "name": "IMG",
+            "client": "IMG",
+            "categories":["design", "development"]
+        },
+        {
+            "id": "remission-2",
+            "imageUrl": "/images/thumb.webp",
+            "name": "Re-Mission 2",
+            "client": "HopeLab",
+            "categories":["design", "development"]
+        },
+        {
+            "id": "dcba",
+            "imageUrl": "/images/thumb.webp",
+            "name": "DCBA Lawyers for the Arts",
+            "client": "Dauphin County Bar Association",
+            "categories":["identity"]
+        },
+        {
+            "id": "laura-medine",
+            "imageUrl": "/images/thumb.webp",
+            "name": "Laura Medine",
+            "client": "Laura Medine",
+            "categories":["design", "development"]
+        },
+        {
+          "id": "anderson-elder-law",
+          "imageUrl": "/images/thumb.webp",
+          "name": "Anderson Elder Law",
+            "client": "Anderson Elder Law",
+            "categories":["design", "development"]
+        },
+        {
+            "id": "concours-at-carlisle",
+            "imageUrl": "/images/thumb.webp",
+            "name": "Concours at Carlisle",
+            "client": "Uncommong Marketing Works",
+            "categories":["design", "development"]
+        },
+        {
+            "id": "moodmeter",
+            "imageUrl": "/images/thumb.webp",
+            "name": "Mood Meter App",
+            "client": "HopeLab",
+            "categories":["design", "development"]
+        },
+        {
+          "id": "desserts-etc",
+          "imageUrl": "/images/thumb.webp",
+          "name": "Desserts, Etc.",
+            "client": "Desserts, Etc.",
+            "categories":["design", "development", "photography"]
+        }
+        ]
+        
+}
