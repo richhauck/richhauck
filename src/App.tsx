@@ -1,6 +1,6 @@
 import { Component, createMemo } from "solid-js";
 import { MetaProvider, Title } from "solid-meta";
-import { Routes, Route, useLocation } from "solid-app-router";
+import { Routes, Route, useLocation, Link } from "solid-app-router";
 import Home from "./pages/Home";
 import Info from "./pages/Info";
 import Work from "./pages/Work";
@@ -8,6 +8,22 @@ import Project from "./pages/Project";
 import Illustration from "./pages/Illustration";
 import Photos from "./pages/Photos";
 import { Transition } from "solid-transition-group";
+import { styled } from "solid-styled-components";
+
+const PrimaryNav = styled("nav")`
+  height: 25px;
+  position: relative;
+  a {
+    padding: 0 0 0 3em;
+    transition: all 0.5s ease-out;
+  }
+  &:hover a {
+    opacity: 0.2;
+  }
+  a:hover {
+    opacity: 1;
+  }
+`;
 
 const App: Component = () => {
   const location = useLocation();
@@ -21,7 +37,7 @@ const App: Component = () => {
   const pathname = createMemo(() => setBodyClass(location.pathname));
   return (
     <MetaProvider>
-      <main class="bg-gradient-to-b from-black to-transparent text-white px-2">
+      <main class="bg-gradient-to-b from-gray to-transparent text-white px-2">
         <Title>Title of page</Title>
         <header>
           <div class="container mx-auto flex justify-between py-4">
@@ -30,23 +46,23 @@ const App: Component = () => {
                 Rich Hauck
               </a>
             </div>
-            <nav id="primary-nav" class="relative">
+            <PrimaryNav id="primary-nav" class="relative">
               <ul class="flex tracking-widest">
                 <li>
-                  <a href="/info">Info</a>
+                  <Link href="/info">Info</Link>
                 </li>
                 <li>
-                  <a href="/work">Work</a>
+                  <Link href="/work">Work</Link>
                 </li>
                 <li>
-                  <a href="/illustration">Illustration</a>
+                  <Link href="/illustration">Illustration</Link>
                 </li>
                 <li>
-                  <a href="/photos">Photos</a>
+                  <Link href="/photos">Photos</Link>
                 </li>
               </ul>
               <div class="h-1 bg-red mt-2 w-5 absolute" id="highlight"></div>
-            </nav>
+            </PrimaryNav>
           </div>
         </header>
         <div id="content" class="container mx-auto min-h-[600px]">
