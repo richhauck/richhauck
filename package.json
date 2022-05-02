@@ -18,6 +18,7 @@
     "vite-plugin-solid": "^2.2.6"
   },
   "dependencies": {
+    "hamburgers": "^1.2.1",
     "lightgallery": "^2.4.0",
     "prettier": "^2.6.2",
     "solid-app-router": "^0.3.2",

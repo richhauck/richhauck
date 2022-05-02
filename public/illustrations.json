@@ -1,0 +1,29 @@
+{
+    "illustrations": [
+        {"id":"vegetables", "src":"images/illustrations/vegetables-1200.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"skyline2", "src":"images/illustrations/skyline2.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"postcards", "src":"images/illustrations/postcards-final.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"pouredinpa", "src":"images/illustrations/pouredinpa-poster.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"september", "src":"images/illustrations/september.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"june2019", "src":"images/illustrations/june2019.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"March_2019", "src":"images/illustrations/March_2019.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"March_2021", "src":"images/illustrations/March_2021.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"march2017", "src":"images/illustrations/march2017.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"mugv2", "src":"images/illustrations/mugv2.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"Nov2020_2", "src":"images/illustrations/Nov2020_2.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"nov2020", "src":"images/illustrations/nov2020.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"november", "src":"images/illustrations/november.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"october2016", "src":"images/illustrations/october2016.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"october2017", "src":"images/illustrations/october2017.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"october2019", "src":"images/illustrations/October2019.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"feb-2016", "src":"images/illustrations/feb-2016.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"feb2019", "src":"images/illustrations/feb2019.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"july", "src":"images/illustrations/july.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"july2016b", "src":"images/illustrations/july2016b.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"cover", "src":"images/illustrations/cover.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"december-2019", "src":"images/illustrations/December-2019.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"december-2016", "src":"images/illustrations/december2016.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"april2016", "src":"images/illustrations/april2016.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"april2017", "src":"images/illustrations/april2017.webp", "width": "400", "title":"title", "caption": "caption"}
+]
+}

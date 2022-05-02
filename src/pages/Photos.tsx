@@ -1,4 +1,4 @@
-import { onMount, Component, createResource, createEffect } from "solid-js";
+import { Component, createEffect } from "solid-js";
 import lightGallery from "lightgallery";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
@@ -7,6 +7,7 @@ import hash from "lightgallery/plugins/hash";
 import pager from "lightgallery/plugins/pager";
 import PhotoThumb from "../components/PhotoThumb";
 import photosResource from "../stores/photosResource";
+import lGLicense from "../stores/lightgalleryLicense";
 
 const Photos: Component = () => {
   const { photos } = photosResource;
@@ -15,9 +16,9 @@ const Photos: Component = () => {
    */
   createEffect(() => {
     if (photos()) {
-      let lGallery = lightGallery(document.getElementById("lightgallery"), {
+      let lGallery = lightGallery(document.getElementById("photos"), {
         plugins: [lgZoom, hash, pager],
-        licenseKey: "D67E85E6-FA794091-89C7890A-DE58E321",
+        licenseKey: lGLicense,
         customSlideName: true,
         mode: "lg-slide",
         selector: ".thumb",
@@ -30,7 +31,7 @@ const Photos: Component = () => {
 
   return (
     <section id="photos">
-      <div id="lightgallery" class="flex flex-wrap">
+      <div id="lightgallery">
         <For each={photos()} fallback={<div>Loading...</div>}>
           {(photo) => <PhotoThumb {...photo} />}
         </For>

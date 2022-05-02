@@ -1,7 +1,18 @@
-import type { Component } from "solid-js";
+import { Component, createEffect, createSignal } from "solid-js";
+import mobileState from "../stores/mobileState";
 
 const PhotoThumb: Component = (props) => {
-  const aWidth = props.width ? `${props.width}px` : "450px";
+  const { isMobile, setIsMobile } = mobileState;
+  const [thumbWidth, setThumbWidth] = createSignal(
+    props.width ? `${props.width}px` : "450px"
+  );
+
+  createEffect(() => {
+    if (isMobile()) {
+      setThumbWidth("300px");
+    }
+  });
+
   const permalink = props.title
     .toLowerCase()
     .replace(/ /g, "-")
@@ -16,7 +27,7 @@ const PhotoThumb: Component = (props) => {
       style={{
         "background-size": "cover",
         "background-image": `url(${props.src})`,
-        width: `${aWidth}`,
+        width: `${thumbWidth()}`,
         height: "300px",
         margin: "0 5px 5px 0",
         flex: "1 0 auto",

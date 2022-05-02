@@ -1,162 +1,53 @@
-import type { Component } from "solid-js";
+import {
+  Component,
+  createResource,
+  For,
+  createEffect,
+  Suspense,
+} from "solid-js";
+import lgZoom from "lightgallery/plugins/zoom";
+import hash from "lightgallery/plugins/hash";
+import pager from "lightgallery/plugins/pager";
+import lightGallery from "lightgallery";
+import PhotoThumb from "../components/PhotoThumb";
+import "lightgallery/css/lightgallery.css";
+import lGLicense from "../stores/lightgalleryLicense";
+
+const fetchIllustrations = async () => {
+  const data = await fetch("/illustrations.json")
+    .then((response) => response.json())
+    .catch((error) => {
+      console.error("Error:", error);
+    });
+  return data.illustrations;
+};
 
 const Illustration: Component = () => {
+  const [illustrations] = createResource(fetchIllustrations);
+
+  createEffect(() => {
+    if (illustrations()) {
+      let lGallery = lightGallery(document.getElementById("illustrations"), {
+        plugins: [lgZoom, hash, pager],
+        licenseKey: lGLicense,
+        customSlideName: true,
+        fullScreen: true,
+        mode: "lg-scale-up",
+        selector: ".thumb",
+        speed: 500,
+        download: false,
+      });
+    }
+  });
+
   return (
-    <>
-      <section class="">
-        <div class="relative mx-auto">
-          <div class="flex flex-wrap -m-1 md:-m-2">
-            {/* 1 */}
-            <div class="flex flex-wrap w-1/5">
-              <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-              <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-            </div>
-
-            {/* 2 */}
-            <div class="flex flex-wrap w-1/5">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-              <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-              <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-            </div>
-
-            {/* 2 */}
-            <div class="flex flex-wrap w-1/5">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-              <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-              <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-            </div>
-
-            {/* 2 */}
-            <div class="flex flex-wrap w-1/5">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-              <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-              <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-            </div>
-
-            {/* 2 */}
-            <div class="flex flex-wrap w-1/5">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-              <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-              <div class="w-1/2 p-1 md:p-2">
-                <img
-                  alt=""
-                  class="block object-cover object-center w-full h-full"
-                  src="images/castle.webp"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      {/*
-      
-      <section id="illustration">
-        <div class="gap-2 columns-4 space-y-2">
-          <img class="w-full aspect-w-16 aspect-h-9" src="images/castle.webp" />
-          <img class="w-full aspect-square" src="images/castle.webp" />
-          <img class="w-full aspect-w-9 aspect-h-16" src="images/castle.webp" />
-          <img class="w-full aspect-rect" src="images/castle.webp" />
-          <img class="w-full aspect-square" src="images/castle.webp" />
-          <img class="w-full aspect-rect" src="images/castle.webp" />
-          <img class="w-full aspect-square" src="images/castle.webp" />
-          <img class="w-full aspect-square" src="images/castle.webp" />
-          <img class="w-full aspect-rect" src="images/castle.webp" />
-          <img class="w-full aspect-w-16 aspect-h-9" src="images/castle.webp" />
-          <img class="w-full aspect-rect" src="images/castle.webp" />
-          <img class="w-full aspect-square" src="images/castle.webp" />
-          <img class="w-full aspect-rect" src="images/castle.webp" />
-          <img class="w-full aspect-square" src="images/castle.webp" />
-          <img class="w-full aspect-square" src="images/castle.webp" />
-        </div>
-      </section>
-      
-      */}
-    </>
+    <section id="illustrations">
+      <div id="lightgallery" class="flex flex-wrap">
+        <For each={illustrations()} fallback={<div>Loading...</div>}>
+          {(illustration) => <PhotoThumb {...illustration} />}
+        </For>
+      </div>
+    </section>
   );
 };
 export default Illustration;

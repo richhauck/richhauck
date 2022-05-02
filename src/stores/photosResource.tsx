@@ -1,6 +1,6 @@
 import { createRoot, createResource } from "solid-js";
 /**
- * Retreives list of photos.
+ * Retrieves list of photos.
  * @returns object
  */
 const fetchPhotos = async () => {

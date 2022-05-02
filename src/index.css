@@ -5,6 +5,8 @@
 @tailwind utilities;
 @tailwind colors;
 
+*{transition: all 0.3s ease-out;}
+
 h1{
   font-family: 'DM Serif Text', serif;
   font-size: 2em;
@@ -17,13 +19,6 @@ header{
 #highlight{
   transition: all 0.4s ease-out;
 }
-/*
-body#home{
-  background-image: url(images/castle.webp);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-*/
 body #highlight{width: 0; left: 0;}
 body#info #highlight{width: 42px; left: 48px;}
 body#work #highlight{width: 55px; left: 141px;}
@@ -52,3 +47,105 @@ body#photos #highlight{width: 72px; left: 422px;}
   width: 100vw;
   height: 100vh;
 }
+
+#lightgallery{
+  display: flex;
+  flex-wrap: wrap;
+}
+#lightgallery:hover a {
+  opacity: 0.2;
+}
+#lightgallery a {
+  transition: all 0.5s ease-out;
+}
+#lightgallery a:hover {
+  opacity: 1;
+}
+
+body.nav-open{
+  overflow: hidden;
+}
+body header{
+  height: 70px;
+  overflow: hidden;
+}
+body.nav-open header{
+  height: 100vh;
+}
+
+
+
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+ .hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; 
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: white;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+/*
+ * Slider
+ */
+.hamburger--slider .hamburger-inner {
+  top: 2px; }
+  .hamburger--slider .hamburger-inner::before {
+    top: 10px;
+    transition-property: transform, opacity;
+    transition-timing-function: ease;
+    transition-duration: 0.15s; }
+  .hamburger--slider .hamburger-inner::after {
+    top: 20px; }
+
+.hamburger--slider.is-active .hamburger-inner {
+  transform: translate3d(0, 10px, 0) rotate(45deg); }
+  .hamburger--slider.is-active .hamburger-inner::before {
+    transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+    opacity: 0; }
+  .hamburger--slider.is-active .hamburger-inner::after {
+    transform: translate3d(0, -20px, 0) rotate(-90deg); }
