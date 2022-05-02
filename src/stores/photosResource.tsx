@@ -4,7 +4,7 @@ import { createRoot, createResource } from "solid-js";
  * @returns object
  */
 const fetchPhotos = async () => {
-  const data = await fetch("photos.json")
+  const data = await fetch("/photos.json")
     .then((response) => response.json())
     .catch((error) => {
       console.error("Error:", error);

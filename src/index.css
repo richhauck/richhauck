@@ -5,8 +5,6 @@
 @tailwind utilities;
 @tailwind colors;
 
-*{transition: all 0.3s ease-out;}
-
 h1{
   font-family: 'DM Serif Text', serif;
   font-size: 2em;

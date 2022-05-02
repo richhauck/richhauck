@@ -7,6 +7,7 @@ import Work from "./pages/Work";
 import Project from "./pages/Project";
 import Illustration from "./pages/Illustration";
 import Photos from "./pages/Photos";
+import NotFound from "./pages/NotFound";
 import { Transition } from "solid-transition-group";
 import { styled } from "solid-styled-components";
 import mobileState from "./stores/mobileState";
@@ -145,6 +146,7 @@ const App: Component = () => {
               <Route path="/work/:id" element={<Project />} />
               <Route path="/illustration" element={<Illustration />} />
               <Route path="/photos" element={<Photos />} />
+              <Route path="/*" element={<NotFound />} />
             </Routes>
           </Transition>
         </div>

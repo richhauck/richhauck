@@ -6,18 +6,10 @@ import {
   Suspense,
 } from "solid-js";
 import WorkThumb from "../components/WorkThumb";
-
-const fetchProjects = async () => {
-  const data = await fetch("/projects.json")
-    .then((response) => response.json())
-    .catch((error) => {
-      console.error("Error:", error);
-    });
-  return data.projects;
-};
+import projectsResource from "../stores/projectsResource";
 
 const Work: Component = () => {
-  const [projects] = createResource(fetchProjects);
+  const { projects } = projectsResource;
   return (
     <section id="work">
       <nav id="subnav">
