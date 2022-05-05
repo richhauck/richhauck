@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "hamburgers": "^1.2.1",
+    "isotope-layout": "^3.0.6",
     "lightgallery": "^2.4.0",
     "prettier": "^2.6.2",
     "solid-app-router": "^0.3.2",

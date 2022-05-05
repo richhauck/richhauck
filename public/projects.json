@@ -43,7 +43,7 @@
             "imageUrl": "/images/thumb.webp",
             "name": "Manada Conservancy",
             "client": "Manada Conservancy",
-            "categories":["identity", "design", "development"],
+            "categories":["branding", "design", "development"],
             "featured":"true"
         },
         {
@@ -80,14 +80,14 @@
             "imageUrl": "/images/thumb.webp",
             "name": "Roost Architecture",
             "client": "Roost Architecture",
-            "categories":["identity", "design", "development", "photography"]
+            "categories":["branding", "design", "development", "photography"]
         },
         {
             "id": "lassen-advisors",
             "imageUrl": "/images/thumb.webp",
             "name": "Lassen Advisors",
             "client": "Lassen Advisors, LLC",
-            "categories":["identity", "design", "development"],
+            "categories":["branding", "design", "development"],
             "featured":"true"
         },
         {
@@ -103,7 +103,7 @@
             "imageUrl": "/images/thumb.webp",
             "name": "TorchBearer Sauces",
             "client": "TorchBearer Sauces, LLC",
-            "categories":["identity", "photography", "illustration"]
+            "categories":["branding", "photography", "illustration"]
         },
         {
             "id": "metalledwith",
@@ -139,7 +139,7 @@
             "imageUrl": "/images/thumb.webp",
             "name": "DCBA Lawyers for the Arts",
             "client": "Dauphin County Bar Association",
-            "categories":["identity"]
+            "categories":["branding"]
         },
         {
             "id": "laura-medine",

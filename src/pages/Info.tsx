@@ -10,7 +10,14 @@ const Info: Component = () => {
           </div>
           <div class="w-2/3 flex justify-center items-center">
             <div class="p-4">
-              <h1>Rich Hauck</h1>
+              <h1>
+                Flash Designer.
+                <br />
+                WordPress Developer.
+                <br />
+                Engineer.
+                <br />
+              </h1>
               <p>
                 Rich Hauck is the Creative Director of Hauck Interactive and has
                 been designing and developing websites, kiosks, and games since

@@ -1,6 +1,6 @@
 {
     "illustrations": [
-        {"id":"vegetables", "src":"images/illustrations/vegetables-1200.webp", "width": "400", "title":"title", "caption": "caption"},
+        {"id":"vegetables", "src":"images/illustrations/vegetables-1200.webp", "width": "200", "title":"title", "caption": "caption"},
         {"id":"skyline2", "src":"images/illustrations/skyline2.webp", "width": "400", "title":"title", "caption": "caption"},
         {"id":"postcards", "src":"images/illustrations/postcards-final.webp", "width": "400", "title":"title", "caption": "caption"},
         {"id":"pouredinpa", "src":"images/illustrations/pouredinpa-poster.webp", "width": "400", "title":"title", "caption": "caption"},

@@ -13,14 +13,7 @@ const fetchProjects = async () => {
 };
 function createProjects() {
   const [projects] = createResource(fetchProjects);
-  const getAdjacent = (projects, slug) => {
-    console.log("projects", projects);
-    /*
-    const index = projects.findIndex((item) => item.id === slug);
-    console.log("slug", index);
-    */
-  };
-  return { projects, getAdjacent };
+  return { projects };
 }
 
 export default createRoot(createProjects);
