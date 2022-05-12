@@ -6,13 +6,19 @@
 @tailwind colors;
 
 h1{
+  background-color: #000;
+  display: inline-block;
+  margin-bottom: 0.5em;
+  padding: 0.2em 0.4em;
   font-family: 'DM Serif Text', serif;
   font-size: 2em;
 }
 
 header{
-  text-transform: uppercase;
   font-family: 'Lato', sans-serif;
+}
+footer{
+  font-family: 'DM Serif Text', serif;
 }
 #highlight{
   transition: all 0.4s ease-out;
@@ -34,8 +40,11 @@ body#photos #highlight{width: 72px; left: 422px;}
   filter: blur(0);
   opacity: 1;
 }
+.lg-on main{
+  filter: blur(10px);
+}
 .lg-backdrop{
-  background-color: #212121 !important;
+  background-color: rgba(0,0,0,0.7) !important;
 }
 #bg{
   z-index: -1;
@@ -70,9 +79,19 @@ body header{
 body.nav-open header{
   height: 100vh;
 }
-
-
-
+a.swipe {
+  background-image: linear-gradient(to right, #FF5858 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+a.swipe:hover {
+  background-position: 0;
+}
 
 /*!
  * Hamburgers

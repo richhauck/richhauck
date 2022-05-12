@@ -51,13 +51,12 @@ const Home: Component = () => {
 
   createEffect(() => {
     if (photos()) {
-      console.log("random", getRandomPhoto().src);
       const randomImgSrc = getRandomPhoto().src;
       document
         .getElementById("bg")
         .setAttribute(
           "style",
-          `background:url(${randomImgSrc}) no-repeat; background-size:cover;`
+          `background:url(${randomImgSrc}) no-repeat; background-size:cover; background-position: center;`
         );
     }
   });
@@ -66,14 +65,10 @@ const Home: Component = () => {
     <div>
       <div id="bg"></div>
       <div class="relative h-96">
-        <div class="absolute bg-black -right-0 top-2/4 p-6 w-[450px]">
+        <div class="absolute bg-black -right-0 top-2/4 p-6 max-w-xl">
           <HomeMsg>
-            <span class="inline-block">Hi! I'm a</span>
-            <span class="relative inline-block">
-              <span class="rotatingText">designer.</span>
-              <span class="rotatingText">developer.</span>
-              <span class="rotatingText">teacher.</span>
-              <span class="rotatingText">artist.</span>
+            <span class="inline-block">
+              Hi! I design, prototype, and build interactive experiences.
             </span>
           </HomeMsg>
         </div>

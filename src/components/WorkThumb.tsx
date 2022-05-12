@@ -1,11 +1,11 @@
 import { Component, createEffect, createSignal } from "solid-js";
 import workFilter from "../stores/workFilter";
 const WorkThumb: Component = (props) => {
-  const { filters } = workFilter;
-  let [classList, setClassList] = createSignal(props.categories.join(" "));
+  //const { filters } = workFilter;
+  //let [classList, setClassList] = createSignal(props.categories.join(" "));
 
+  /*
   createEffect(() => {
-    console.log("effect", props.categories.includes(filters()));
     // create classes from categories
     if (filters() !== "") {
       if (!props.categories.includes(filters())) {
@@ -15,15 +15,18 @@ const WorkThumb: Component = (props) => {
       }
     }
   });
+  */
 
   return (
-    <a class={classList()} href={`/work/${props.id}`}>
+    <a href={`/work/${props.id}`}>
       <figure>
         <img src={props.imageUrl} alt={props.name} />
-        <figcaption class="py-2">
+        <figcaption class="py-2 leading-none">
           <p>
             <strong class="block">{props.name}</strong>
-            <span>2018</span>
+            <span class="text-lightgray text-xs lg:text-base">
+              {props.categories.toString()}
+            </span>
           </p>
         </figcaption>
       </figure>

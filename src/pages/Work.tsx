@@ -4,18 +4,20 @@ import projectsResource from "../stores/projectsResource";
 import workFilter from "../stores/workFilter";
 import { styled } from "solid-styled-components";
 
+/*
 const Subnav = styled("nav")`
   button.active {
     color: red;
   }
 `;
-
+*/
 const Work: Component = () => {
   const { projects } = projectsResource;
   const { filters, setFilters } = workFilter;
 
   return (
     <section id="work">
+      {/*
       <Subnav>
         <ul class="flex">
           <li>
@@ -52,11 +54,12 @@ const Work: Component = () => {
           </li>
         </ul>
       </Subnav>
+      */}
 
       <div class="min-h-screen flex items-center justify-center">
         <div
           id="work-thumbs"
-          class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2"
         >
           <Suspense fallback={<p>Loading...</p>}>
             <For each={projects()} fallback={<div>Loading...</div>}>

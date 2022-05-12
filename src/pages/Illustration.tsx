@@ -4,6 +4,7 @@ import {
   For,
   createEffect,
   Suspense,
+  onMount,
 } from "solid-js";
 import lgZoom from "lightgallery/plugins/zoom";
 import hash from "lightgallery/plugins/hash";
@@ -24,7 +25,9 @@ const fetchIllustrations = async () => {
 
 const Illustration: Component = () => {
   const [illustrations] = createResource(fetchIllustrations);
-
+  onMount(() => {
+    document.title = "Illustration - Rich Hauck";
+  });
   createEffect(() => {
     if (illustrations()) {
       let lGallery = lightGallery(document.getElementById("illustrations"), {
@@ -32,7 +35,7 @@ const Illustration: Component = () => {
         licenseKey: lGLicense,
         customSlideName: true,
         fullScreen: true,
-        mode: "lg-scale-up",
+        mode: "lg-fade",
         selector: ".thumb",
         speed: 500,
         download: false,

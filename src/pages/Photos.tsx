@@ -20,11 +20,10 @@ const Photos: Component = () => {
         plugins: [lgZoom, hash, pager],
         licenseKey: lGLicense,
         customSlideName: true,
-        mode: "lg-slide",
+        mode: "lg-fade",
         selector: ".thumb",
         speed: 500,
         download: false,
-        pager: true,
       });
     }
   });
