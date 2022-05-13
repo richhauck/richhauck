@@ -11,6 +11,7 @@ import hash from "lightgallery/plugins/hash";
 import pager from "lightgallery/plugins/pager";
 import lightGallery from "lightgallery";
 import PhotoThumb from "../components/PhotoThumb";
+import Loader from "../components/Loader";
 import "lightgallery/css/lightgallery.css";
 import lGLicense from "../stores/lightgalleryLicense";
 
@@ -46,7 +47,7 @@ const Illustration: Component = () => {
   return (
     <section id="illustrations">
       <div id="lightgallery">
-        <Suspense fallback={<p>Loading...</p>}>
+        <Suspense fallback={<Loader />}>
           <For each={illustrations()} fallback={<div>Loading...</div>}>
             {(illustration) => <PhotoThumb {...illustration} />}
           </For>

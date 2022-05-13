@@ -14,6 +14,7 @@ import "lightgallery/css/lightgallery.css";
 import { useParams } from "solid-app-router";
 import projectsResource from "../stores/projectsResource";
 import lGLicense from "../stores/lightgalleryLicense";
+import Loader from "../components/Loader";
 /**
  * Retrieves project data
  * @param slug {string}
@@ -68,7 +69,7 @@ const Project: Component = () => {
 
   return (
     <section id="project" class="pb-20">
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<Loader />}>
         <Show when={projectData()}>
           <div class="w-7/12 m-auto">
             <h1>{projectData().name}</h1>

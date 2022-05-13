@@ -1,4 +1,4 @@
-import { Component, createEffect, onMount } from "solid-js";
+import { Component, createEffect, onMount, Suspense } from "solid-js";
 import lightGallery from "lightgallery";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
@@ -8,6 +8,7 @@ import pager from "lightgallery/plugins/pager";
 import PhotoThumb from "../components/PhotoThumb";
 import photosResource from "../stores/photosResource";
 import lGLicense from "../stores/lightgalleryLicense";
+import Loader from "../components/Loader";
 
 const Photos: Component = () => {
   const { photos } = photosResource;
@@ -34,9 +35,11 @@ const Photos: Component = () => {
   return (
     <section id="photos">
       <div id="lightgallery">
-        <For each={photos()} fallback={<div>Loading...</div>}>
-          {(photo) => <PhotoThumb {...photo} />}
-        </For>
+        <Suspense fallback={<Loader />}>
+          <For each={photos()} fallback={<div>Loading...</div>}>
+            {(photo) => <PhotoThumb {...photo} />}
+          </For>
+        </Suspense>
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { Component, For, Suspense, onMount } from "solid-js";
 import WorkThumb from "../components/WorkThumb";
 import projectsResource from "../stores/projectsResource";
+import Loader from "../components/Loader";
 
 const Work: Component = () => {
   const { projects } = projectsResource;
@@ -14,7 +15,7 @@ const Work: Component = () => {
           id="work-thumbs"
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2"
         >
-          <Suspense fallback={<p>Loading...</p>}>
+          <Suspense fallback={<Loader />}>
             <For each={projects()} fallback={<div>Loading...</div>}>
               {(project) => <WorkThumb {...project} />}
             </For>
