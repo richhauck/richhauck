@@ -1,4 +1,4 @@
-import { Component, createEffect } from "solid-js";
+import { Component, createEffect, onMount } from "solid-js";
 import lightGallery from "lightgallery";
 import "lightgallery/css/lightgallery.css";
 import "lightgallery/css/lg-zoom.css";
@@ -11,6 +11,9 @@ import lGLicense from "../stores/lightgalleryLicense";
 
 const Photos: Component = () => {
   const { photos } = photosResource;
+  onMount(() => {
+    document.title = "Photos - Rich Hauck";
+  });
   /**
    * Initialize light gallery once photos have loaded
    */

@@ -36,7 +36,6 @@ const Project: Component = () => {
   const [prevProject, setPrevProject] = createSignal();
   const [nextProject, setNextProject] = createSignal();
   const { projects } = projectsResource;
-
   let [projectData] = createResource(pId, fetchProject);
 
   // Ensure correct project has loaded, otherwise initialize lightgallery
@@ -55,6 +54,8 @@ const Project: Component = () => {
           speed: 500,
           download: false,
         });
+        // Update title
+        document.title = `${projectData().name} - Rich Hauck`;
 
         if (projects()) {
           const index = projects().findIndex((item) => item.id === params.id);

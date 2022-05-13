@@ -46,10 +46,11 @@ const Illustration: Component = () => {
   return (
     <section id="illustrations">
       <div id="lightgallery">
-        {/* <div class="flex flex-wrap"> */}
-        <For each={illustrations()} fallback={<div>Loading...</div>}>
-          {(illustration) => <PhotoThumb {...illustration} />}
-        </For>
+        <Suspense fallback={<p>Loading...</p>}>
+          <For each={illustrations()} fallback={<div>Loading...</div>}>
+            {(illustration) => <PhotoThumb {...illustration} />}
+          </For>
+        </Suspense>
       </div>
     </section>
   );

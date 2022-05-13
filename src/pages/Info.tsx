@@ -32,7 +32,7 @@ const Bio = styled("div")`
 
 const Info: Component = () => {
   onMount(() => {
-    document.title = "About Rich Hauck";
+    document.title = "About - Rich Hauck";
   });
   return (
     <>

@@ -1,4 +1,4 @@
-import { Component, createEffect } from "solid-js";
+import { Component, createEffect, onMount } from "solid-js";
 import photosResource from "../stores/photosResource";
 import { styled } from "solid-styled-components";
 
@@ -48,6 +48,10 @@ const HomeMsg = styled("div")`
 `;
 const Home: Component = () => {
   const { photos, getRandomPhoto } = photosResource;
+
+  onMount(() => {
+    document.title = "Rich Hauck - Designer and Software Engineer";
+  });
 
   createEffect(() => {
     if (photos()) {
