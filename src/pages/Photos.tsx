@@ -34,7 +34,7 @@ const Photos: Component = () => {
 
   return (
     <section id="photos">
-      <div id="lightgallery">
+      <div id="lightgallery" class="px-5 md:px-0">
         <Suspense fallback={<Loader />}>
           <For each={photos()} fallback={<div>Loading...</div>}>
             {(photo) => <PhotoThumb {...photo} />}

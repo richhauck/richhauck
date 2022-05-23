@@ -46,7 +46,7 @@ const Illustration: Component = () => {
 
   return (
     <section id="illustrations">
-      <div id="lightgallery">
+      <div id="lightgallery" class="px-5 md:px-0">
         <Suspense fallback={<Loader />}>
           <For each={illustrations()} fallback={<div>Loading...</div>}>
             {(illustration) => <PhotoThumb {...illustration} />}

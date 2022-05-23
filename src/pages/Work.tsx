@@ -13,7 +13,7 @@ const Work: Component = () => {
       <div class="min-h-screen flex items-center justify-center">
         <div
           id="work-thumbs"
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2"
+          class="grid grid-cols-1 px-5 md:px-0 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-2"
         >
           <Suspense fallback={<Loader />}>
             <For each={projects()} fallback={<div>Loading...</div>}>

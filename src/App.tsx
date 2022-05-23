@@ -61,7 +61,7 @@ const App: Component = () => {
   /**
    * Toggles class on body
    */
-  const clickHamburger = () => {
+  const toggleNav = () => {
     const activeState = isActive() === "" ? "is-active" : "";
     setIsActive(activeState);
     document.body.classList.toggle("nav-open");
@@ -89,9 +89,9 @@ const App: Component = () => {
 
           <button
             id="nav-toggle"
-            class={`absolute z-50 -right-2 top-2 hamburger md:invisible hamburger--slider ${isActive()}`}
+            class={`absolute z-50 right-1 md:-right-3 top-2 hamburger md:invisible hamburger--slider ${isActive()}`}
             type="button"
-            onClick={clickHamburger}
+            onClick={toggleNav}
           >
             <span class="hamburger-box">
               <span class="hamburger-inner"></span>
@@ -101,16 +101,24 @@ const App: Component = () => {
           <PrimaryNav id="primary-nav">
             <ul class="flex tracking-widest">
               <li>
-                <Link href="/info">Info</Link>
+                <Link onClick={toggleNav} href="/info">
+                  Info
+                </Link>
               </li>
               <li>
-                <Link href="/work">Work</Link>
+                <Link onClick={toggleNav} href="/work">
+                  Work
+                </Link>
               </li>
               <li>
-                <Link href="/illustration">Illustration</Link>
+                <Link onClick={toggleNav} href="/illustration">
+                  Illustration
+                </Link>
               </li>
               <li>
-                <Link href="/photos">Photos</Link>
+                <Link onClick={toggleNav} href="/photos">
+                  Photos
+                </Link>
               </li>
             </ul>
             <div
