@@ -1,5 +1,5 @@
 import { Component, createMemo, createSignal, createEffect } from "solid-js";
-import { Routes, Route, useLocation, Link } from "solid-app-router";
+import { Routes, Route, useLocation, useNavigate } from "solid-app-router";
 import Home from "./pages/Home";
 import Info from "./pages/Info";
 import Work from "./pages/Work";
@@ -15,14 +15,14 @@ const PrimaryNav = styled("nav")`
   height: 25px;
   position: relative;
   display: block;
-  a {
+  button {
     padding: 0 0 0 3em;
     transition: all 0.5s ease-out;
   }
-  &:hover a {
+  &:hover button {
     opacity: 0.2;
   }
-  a:hover {
+  button:hover {
     opacity: 1;
   }
   @media (max-width: 768px) {
@@ -37,26 +37,32 @@ const PrimaryNav = styled("nav")`
     li {
       margin: 1em 0;
     }
-    a {
+    button {
       padding: 0;
     }
   }
 `;
 
 const App: Component = () => {
-  const { isMobile, setIsMobile } = mobileState;
+  const { setIsMobile } = mobileState;
   const location = useLocation();
   const [isActive, setIsActive] = createSignal("");
+  const navigate = useNavigate();
 
   createEffect(() => {
-    function onWindowResize() {
+    const onWindowResize = () => {
       if (window.innerWidth > 768) {
         setIsMobile(false);
+        if (document.body.classList.contains("nav-open")) {
+          document.body.classList.remove("nav-open");
+        }
       } else {
         setIsMobile(true);
       }
-    }
+    };
     window.addEventListener("resize", onWindowResize);
+    // test upon first load
+    onWindowResize();
   });
   /**
    * Toggles class on body
@@ -65,6 +71,12 @@ const App: Component = () => {
     const activeState = isActive() === "" ? "is-active" : "";
     setIsActive(activeState);
     document.body.classList.toggle("nav-open");
+  };
+  const closeMobileNav = () => {
+    setIsActive("");
+    if (document.body.classList.contains("nav-open")) {
+      document.body.classList.remove("nav-open");
+    }
   };
   /**
    * Pulls page slug to use as body#id
@@ -79,7 +91,7 @@ const App: Component = () => {
   const pathname = createMemo(() => setBodyId(location.pathname));
   return (
     <main class="relative text-white transition-opacity mb-10">
-      <header class="px-[20px] uppercase relative fixed z-20 bg-gradient-to-b from-gray to-transparent h-30">
+      <header class="uppercase px-[20px] relative fixed z-20 bg-gradient-to-b from-gray to-transparent h-30">
         <div class="container mx-auto flex flex-col md:flex-row justify-between py-4">
           <div id="logo">
             <a href="/" class="swipe text-3xl tracking-widest">
@@ -101,24 +113,48 @@ const App: Component = () => {
           <PrimaryNav id="primary-nav">
             <ul class="flex tracking-widest">
               <li>
-                <Link onClick={toggleNav} href="/info">
+                <button
+                  class="uppercase tracking-widest"
+                  onClick={() => {
+                    closeMobileNav();
+                    navigate("/info");
+                  }}
+                >
                   Info
-                </Link>
+                </button>
               </li>
               <li>
-                <Link onClick={toggleNav} href="/work">
+                <button
+                  class="uppercase tracking-widest"
+                  onClick={() => {
+                    closeMobileNav();
+                    navigate("/work");
+                  }}
+                >
                   Work
-                </Link>
+                </button>
               </li>
               <li>
-                <Link onClick={toggleNav} href="/illustration">
+                <button
+                  class="uppercase tracking-widest"
+                  onClick={() => {
+                    closeMobileNav();
+                    navigate("/illustration");
+                  }}
+                >
                   Illustration
-                </Link>
+                </button>
               </li>
               <li>
-                <Link onClick={toggleNav} href="/photos">
+                <button
+                  class="uppercase tracking-widest"
+                  onClick={() => {
+                    closeMobileNav();
+                    navigate("/photos");
+                  }}
+                >
                   Photos
-                </Link>
+                </button>
               </li>
             </ul>
             <div

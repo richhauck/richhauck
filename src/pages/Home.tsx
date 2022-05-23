@@ -6,6 +6,9 @@ const HomeMsg = styled("div")`
   font-family: "DM Serif Text", serif;
   font-size: 3em;
   display: flex;
+  @media (max-width: 768px) {
+    font-size: 2em;
+  }
 
   span:first-child {
     padding-right: 0.2em;
@@ -69,9 +72,9 @@ const Home: Component = () => {
     <div>
       <div id="bg"></div>
       <div class="relative h-96">
-        <div class="absolute bg-black -right-0 top-2/4 p-6 max-w-xl">
+        <div class="absolute bg-black -right-0 top-1/3 p-6 max-w-xl">
           <HomeMsg>
-            <span class="inline-block">
+            <span class="text-right inline-block">
               Hi! I design, prototype, and build interactive experiences.
             </span>
           </HomeMsg>
